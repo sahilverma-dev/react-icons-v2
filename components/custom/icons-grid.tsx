@@ -1,10 +1,17 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { ComponentType, FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 // import { getIcons } from "virtual:react-icons-get-icons";
 
 import { motion } from "framer-motion";
+
+import * as data from "react-icons/ai";
+
+const icons = Object.keys(data).map((item, index) => ({
+  label: item,
+  // @ts-ignore
+  icon: data[item],
+}));
 
 import { AiFillAmazonCircle } from "react-icons/ai";
 import { buttonVariants } from "../ui/button";
@@ -16,22 +23,18 @@ import {
   SheetTitle,
 } from "../ui/sheet";
 import { child, parent } from "@/constants/variants";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 interface Props {
   id: string;
 }
 
 const IconsGrid: FC<Props> = ({ id }) => {
-  const [icons, setIcons] = useState<{
-    [name: string]: ComponentType;
-  }>();
-
-  useEffect(() => {
-    // getIcons(id).then((icons) => {
-    //   console.log(icons);
-    // });
-  }, []);
-
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
@@ -41,35 +44,34 @@ const IconsGrid: FC<Props> = ({ id }) => {
       animate="visible"
       className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 gap-4 w-full"
     >
-      {/* {Object.keys(icons as []).map((name) => {
-        const Component = icons[name];
-        if (!Component) {
-          return null;
-        }
-        return (
-          <button
-          key={i}
-          onClick={() => setSelected(AiFillAmazonCircle)}
-          className="border rounded-lg aspect-square hover:bg-secondary transition-all w-full flex flex-col items-center justify-center text-center gap-2"
-          // className={cn([buttonVariants({ variant: "secondary" })])}
-        >
-          <AiFillAmazonCircle className="text-3xl" />
-          <p className="text-xs font-medium">hello</p>
-        </button>
-        );
-      })} */}
-      {Array.from({ length: 100 }).map((_, i) => (
-        <motion.button
-          variants={child}
-          key={i}
-          onClick={() => setSelected(AiFillAmazonCircle)}
-          className="border rounded-lg aspect-square hover:bg-secondary transition-all w-full flex flex-col items-center justify-center text-center gap-2"
-          // className={cn([buttonVariants({ variant: "secondary" })])}
-        >
-          <AiFillAmazonCircle className="text-3xl" />
-          <p className="text-xs font-medium">hello</p>
-        </motion.button>
-      ))}
+      <TooltipProvider>
+        {/* {Array.from({ length: 100 }).map((_, i) => ( */}
+        {icons.map((icon) => (
+          <Tooltip key={icon.label}>
+            <TooltipTrigger asChild>
+              <motion.button
+                variants={child}
+                onClick={() => setSelected(AiFillAmazonCircle)}
+                className="border rounded-lg aspect-square hover:bg-secondary transition-all w-full flex flex-col items-center justify-center text-center gap-2"
+              >
+                <icon.icon className="text-2xl" />
+                <p className="text-xs font-medium w-[60%] truncate">
+                  {icon.label}
+                </p>
+              </motion.button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{icon.label}</p>
+            </TooltipContent>
+          </Tooltip>
+        ))}
+        {/* <Tooltip>
+    <TooltipTrigger>Hover</TooltipTrigger>
+    <TooltipContent>
+      <p>Add to library</p>
+    </TooltipContent>
+  </Tooltip> */}
+      </TooltipProvider>
       <Sheet open={selected !== null} onOpenChange={() => setSelected(null)}>
         <SheetContent overlay className="w-full sm:max-w-md">
           <SheetHeader>

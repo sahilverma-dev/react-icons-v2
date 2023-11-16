@@ -1,3 +1,4 @@
+import Code from "@/components/custom/code";
 import IconsGrid from "@/components/custom/icons-grid";
 import { FC } from "react";
 import { IconsManifest } from "react-icons";
@@ -31,6 +32,7 @@ const IconPage: FC<Props> = ({ params }) => {
             {icon?.license}
           </a>
         </div>
+
         <div className="flex items-center gap-1 ">
           <b>Project:</b>
           <a
@@ -40,6 +42,13 @@ const IconPage: FC<Props> = ({ params }) => {
           >
             {icon?.projectUrl}
           </a>
+        </div>
+        <div className="my-4">
+          <h2 className="text-lg font-medium">Import</h2>
+          <Code
+            language="jsx"
+            code={`import { IconName } from "react-icons/${icon?.id}";`}
+          />
         </div>
       </div>
       <div className="space-y-4">

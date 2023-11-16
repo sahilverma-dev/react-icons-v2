@@ -35,7 +35,7 @@ const Code: FC<Props> = ({ name, code, language }) => {
   };
 
   return (
-    <div className="bg-zinc-900 rounded-md my-5 overflow-hidden">
+    <div className="bg-zinc-900 rounded-md my-3 overflow-hidden">
       {name && (
         <div className="flex items-center justify-between">
           <p className="text-white px-6 text-sm font-medium">
