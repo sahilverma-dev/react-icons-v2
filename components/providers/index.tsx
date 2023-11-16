@@ -2,7 +2,6 @@
 
 import { FC, ReactNode } from "react";
 import { ThemeProvider } from "./theme-provider";
-import ReduxProvider from "./redux-provider";
 
 interface Props {
   children: ReactNode;
@@ -16,7 +15,7 @@ const Providers: FC<Props> = ({ children }) => {
       enableSystem
       disableTransitionOnChange
     >
-      <ReduxProvider>{children}</ReduxProvider>
+      {children}
     </ThemeProvider>
   );
 };
