@@ -16,11 +16,12 @@ const Search: FC<Props> = ({ searchParams }) => {
 
   return (
     <div className="p-4 w-full space-y-4">
-      <h1 className="font-bold text-3xl">🔍 Search</h1>
+      The search feature is currently not functioning.
+      {/* <h1 className="font-bold text-3xl">🔍 Search</h1>
       <p>
         Results for: <i>{q}</i>
       </p>
-      <SearchResults q={q} />
+      <SearchResults q={q} /> */}
     </div>
   );
 };
