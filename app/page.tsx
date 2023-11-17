@@ -1,12 +1,16 @@
-/* eslint-disable @next/next/no-img-element */
 import Code from "@/components/custom/code";
 import { InfoIcon } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { IconsManifest } from "react-icons";
 
-export const generateMetadata = () => ({
-  title: "Home",
-});
+// export const generateMetadata = () => ({
+//   title: "Home",
+// });
+
+export const metadata: Metadata = {
+  title: "Home - React Icons",
+};
 
 const icons = [...IconsManifest].sort((a, b) => a.name.localeCompare(b.name));
 
