@@ -1,3 +1,4 @@
+import { data } from "@/constants/data";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -18,4 +19,12 @@ export const debounce = <T extends (...args: any[]) => unknown>(
       func(...args);
     }, delay);
   };
+};
+
+export const searchIcon = (q: string) => {
+  // @ts-ignore
+  const allIcons = Object.values(data).map((i) => i.map((k) => k.icon));
+  console.log(allIcons.slice(0, 10));
+
+  return [];
 };

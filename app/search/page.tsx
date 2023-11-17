@@ -1,3 +1,4 @@
+import SearchResults from "@/components/custom/search-results";
 import { FC } from "react";
 
 interface Props {
@@ -19,6 +20,7 @@ const Search: FC<Props> = ({ searchParams }) => {
       <p>
         Results for: <i>{q}</i>
       </p>
+      <SearchResults q={q} />
     </div>
   );
 };

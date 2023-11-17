@@ -14,6 +14,22 @@ export const metadata: Metadata = {
   },
   description:
     "Include popular icons in your React projects easly with react-icons.",
+  openGraph: {
+    type: "website",
+    images: "/open-graph.png",
+    title: "React Icons",
+    description:
+      "Include popular icons in your React projects easly with react-icons.",
+    url: "https://react-icons-v2.vercel.app/",
+  },
+  twitter: {
+    images: "/open-graph.png",
+    title: "React Icons",
+    creator: "sahilverma-dev",
+    description:
+      "Include popular icons in your React projects easly with react-icons.",
+    site: "https://react-icons-v2.vercel.app/",
+  },
 };
 
 export default function RootLayout({

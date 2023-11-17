@@ -14,28 +14,19 @@ import { data } from "@/constants/data";
 import { Skeleton } from "../ui/skeleton";
 
 interface Props {
-  id: string;
+  icons: {
+    id: string;
+    label: string;
+    icon: any;
+  }[];
 }
 
-const IconsGrid: FC<Props> = ({ id }) => {
-  const [icons, setIcons] = useState<
-    {
-      id: string;
-      label: string;
-      icon: any;
-    }[]
-  >([]);
-
+const IconsGrid: FC<Props> = ({ icons }) => {
   const [selectedIcon, setSelectedIcon] = useState<null | {
     id: string;
     label: string;
     icon: any;
   }>(null);
-
-  useEffect(() => {
-    // @ts-ignore
-    setIcons(data[id]);
-  }, []);
 
   return (
     <>
@@ -55,7 +46,7 @@ const IconsGrid: FC<Props> = ({ id }) => {
                       onClick={() => {
                         setSelectedIcon({
                           icon: icon.icon,
-                          id,
+                          id: icon.id,
                           label: icon.label,
                         });
                       }}
