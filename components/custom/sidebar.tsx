@@ -36,6 +36,7 @@ const Sidebar = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setShowMenu(false);
     if (query.length < 3) {
       toast.error("Query should've at least 3 letters");
     } else {
@@ -60,9 +61,9 @@ const Sidebar = () => {
             onClick={() => setShowMenu((state) => !state)}
           >
             {showMenu ? (
-              <X className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <X className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
             ) : (
-              <MenuIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <MenuIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
             )}
             <span className="sr-only">Toggle theme</span>
           </Button>
@@ -105,6 +106,10 @@ const Sidebar = () => {
                 }),
                 "py-6 justify-start"
               )}
+              onClick={() => {
+                window.scrollY = 0;
+                setShowMenu(false);
+              }}
             >
               {route.label}
             </Link>
