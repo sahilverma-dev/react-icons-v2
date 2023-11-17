@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Code from "@/components/custom/code";
 import { InfoIcon } from "lucide-react";
 import { Metadata } from "next";
@@ -44,7 +45,7 @@ const Home = () => {
         </a>
       </div>
       <div
-        className="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        className="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-zinc-900 dark:text-red-400"
         role="alert"
       >
         <InfoIcon className="flex-shrink-0 hidden sm:inline w-4 h-4 me-3" />
