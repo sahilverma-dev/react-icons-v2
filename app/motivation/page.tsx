@@ -29,7 +29,7 @@ const Motivation = () => {
         <p className="text-gray-600 dark:text-gray-400 mb-4">
           For the development, I chose Next.js for its server-side rendering
           capabilities, Tailwind CSS for a utility-first styling approach,
-          Shandn for a sleek design, and, of course,{" "}
+          Shadcn for a sleek design, and, of course,{" "}
           <a
             href="https://react-icons.github.io/react-icons/"
             target="_blank"

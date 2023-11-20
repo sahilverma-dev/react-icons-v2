@@ -8,7 +8,7 @@ Hi there! 👋 I'm Sahil Verma, and this is the repository for React Icons v2, a
 
 The motivation behind building this site was to offer a fresh and updated look compared to the official React Icons website. I found the official site lacking in terms of aesthetics and modern design principles, so I decided to create a new and improved version.
 
-For the development of this website, I chose Next.js for its server-side rendering capabilities, Tailwind CSS for a utility-first styling approach, Shandn for a sleek design, and, of course, react-icons to showcase a wide variety of icons.
+For the development of this website, I chose Next.js for its server-side rendering capabilities, Tailwind CSS for a utility-first styling approach, Shadcn for a sleek design, and, of course, react-icons to showcase a wide variety of icons.
 
 **Please note:** This is not the official [React Icons](https://react-icons.github.io/react-icons/) website, and I do not own the [React Icons repository](https://react-icons.github.io/react-icons/). All credits for the fantastic React Icons library go to the original creators and contributors.
 
