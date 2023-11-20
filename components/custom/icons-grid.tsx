@@ -39,8 +39,8 @@ const IconsGrid: FC<Props> = ({ icons }) => {
                   className="h-full w-full rounded-lg aspect-square"
                 />
               ))
-            : icons.map((icon) => (
-                <Tooltip key={icon.label}>
+            : icons.map((icon, index) => (
+                <Tooltip key={`${icon.label}-${icon.id}`}>
                   <TooltipTrigger asChild>
                     <button
                       onClick={() => {

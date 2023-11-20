@@ -71,7 +71,7 @@ const Sidebar = () => {
       </div>
       <div
         className={cn(
-          "w-full h-full overflow-y-scroll md:block",
+          "w-full h-full overflow-y-scroll sm:block",
           showMenu ? "block" : "hidden"
         )}
       >

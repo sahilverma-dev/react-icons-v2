@@ -23,8 +23,11 @@ export const debounce = <T extends (...args: any[]) => unknown>(
 
 export const searchIcon = (q: string) => {
   // @ts-ignore
-  const allIcons = Object.values(data).map((i) => i.map((k) => k.icon));
-  console.log(allIcons.slice(0, 10));
+  const allIcons: any[] = Object.values(data).map((i) => i.map((k) => k));
 
-  return [];
+  let icons: { id: string; label: string; icon: any }[] = [].concat(
+    ...allIcons
+  );
+
+  return icons.filter((i) => i.label.toLowerCase().includes(q.toLowerCase()));
 };

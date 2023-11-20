@@ -11,6 +11,7 @@ interface Props {
 
 const SearchResults: FC<Props> = ({ q }) => {
   const icons = searchIcon(q);
+
   return (
     <div>
       {icons.length === 0 ? <p>No icons</p> : <IconsGrid icons={icons} />}
