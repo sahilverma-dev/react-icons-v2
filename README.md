@@ -38,23 +38,23 @@ Feel free to explore and enjoy the collection of React Icons on this website!
 
 To get started with React Icons v2, follow these steps:
 
-1. **Clone the Repository:**
+1.  **Clone the Repository:**
 
-   ```bash
-   git clone https://github.com/sahilverma-dev/react-icons-v2.git
-   ```
+    ```bash
+    git clone https://github.com/sahilverma-dev/react-icons-v2.git
+    ```
 
-2. **Install Dependencies:**
+2.  **Install Dependencies:**
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
-3. **Start the Application:**
+3.  **Start the Application:**
 
-```base
+    ```base
     npm run dev
-```
+    ```
 
 ## Connect with Me
 
@@ -70,3 +70,7 @@ For any inquiries, you can reach me at sahilverma.webdev@gmail.com.
 Now you can visit http://localhost:3000 in your browser to explore React Icons v2!
 
 Feel free to contribute or provide feedback. Happy coding! 🚀
+
+```
+
+```
